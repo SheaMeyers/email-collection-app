@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 class Page(models.Model):
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
-    url_pathname = models.CharField(blank=True, max_length=40)
+    url_pathname = models.CharField(blank=True, unique=True, max_length=40)
     title = models.CharField(blank=True, max_length=40)
     sub_title = models.CharField(blank=True, max_length=40)
     text_above_email = models.TextField(blank=True)
