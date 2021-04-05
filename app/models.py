@@ -9,12 +9,19 @@ from django.utils.translation import gettext_lazy as _
 class Page(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
-    url_pathname = models.CharField(blank=True, unique=True, max_length=40)
+    url_pathname = models.CharField(blank=True, max_length=40)
     title = models.CharField(blank=True, max_length=40)
     sub_title = models.CharField(blank=True, max_length=80)
     text_above_email = models.TextField(blank=True)
     text_below_email = models.TextField(blank=True)
     background_colour = models.CharField(blank=True, max_length=7)
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        if self.url_pathname and Page.objects.filter(url_pathname=self.url_pathname).exists():
+            raise ValueError(f"Another page already has the url path name {self.url_pathname}")
+
+        return super().save(force_insert=force_insert, force_update=force_update,
+                            using=using, update_fields=update_fields)
 
 
 class User(AbstractUser):
