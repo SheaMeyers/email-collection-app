@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 
 from .models import Page, User, EmailEntry
 
@@ -16,6 +17,12 @@ class UserAdmin(admin.ModelAdmin):
 class PageAdmin(admin.ModelAdmin):
     list_display = ('id', 'url_pathname', 'title', 'sub_title', 'background_colour',)
     search_fields = ('url_pathname', 'title', 'sub_title', 'background_colour',)
+    readonly_fields = ('date_created', 'webpage',)
+
+    def webpage(self, obj):
+        return format_html(f'<a href="http://localhost:8000/{obj.url_pathname}" '
+                           f'target="_blank" rel="noopener noreferrer">Your Web Page</a>')
+    webpage.allow_tags = True
 
     def has_change_permission(self, request, obj=None):
         return request.user.is_active and (request.user.is_staff or request.user.is_superuser)
