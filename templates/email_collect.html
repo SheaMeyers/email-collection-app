@@ -15,8 +15,11 @@
                 <h3>{{ object.text_above_email|linebreaksbr }}</h3>
                 <form action="{{ request.path }}" method="post">
                     {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value="Submit">
+                    <div class="email-submission--div">
+                        <input type="email" name="email" maxlength="254" required id="id_email"
+                               class="email-submission--input" placeholder="youremail@address.com">
+                        <button type="submit" class="email-submission--button">Submit</button>
+                    </div>
                 </form>
                 {% if messages %}
                     {% for message in messages %}
