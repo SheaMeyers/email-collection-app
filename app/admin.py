@@ -17,5 +17,5 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(EmailEntry)
 class EmailEntryAdmin(admin.ModelAdmin):
-    list_display = ('email',)
+    list_display = ('email', 'date_added',)
     search_fields = ('email',)

@@ -84,6 +84,7 @@
   border-bottom-left-radius: 0;
   color: #6c757d;
   border-color: #6c757d;
+  z-index: 2;
 }
 
 .email-submission--button:hover {
