@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
@@ -5,13 +7,14 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Page(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
     url_pathname = models.CharField(blank=True, unique=True, max_length=40)
     title = models.CharField(blank=True, max_length=40)
     sub_title = models.CharField(blank=True, max_length=80)
     text_above_email = models.TextField(blank=True)
     text_below_email = models.TextField(blank=True)
-    background_colour = models.CharField(blank=True, max_length=6, help_text='Six character hex value')
+    background_colour = models.CharField(blank=True, max_length=7)
 
 
 class User(AbstractUser):
@@ -28,6 +31,7 @@ class User(AbstractUser):
 
 
 class EmailEntry(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_added = models.DateTimeField(_('date added'), default=timezone.now)
     email = models.EmailField()
     page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name='email_entries')

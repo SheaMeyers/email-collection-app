@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
+from .forms import PageAdminForm
 from .models import Page, User, EmailEntry
 
 
@@ -15,13 +16,15 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Page)
 class PageAdmin(admin.ModelAdmin):
+    form = PageAdminForm
     list_display = ('id', 'url_pathname', 'title', 'sub_title', 'background_colour',)
     search_fields = ('url_pathname', 'title', 'sub_title', 'background_colour',)
     readonly_fields = ('date_created', 'webpage',)
 
     def webpage(self, obj):
-        return format_html(f'<a href="http://localhost:8000/{obj.url_pathname}" '
-                           f'target="_blank" rel="noopener noreferrer">Your Web Page</a>')
+        if obj.url_pathname:
+            return format_html(f'<a href="http://localhost:8000/{obj.url_pathname}" '
+                               f'target="_blank" rel="noopener noreferrer">Your Web Page</a>')
     webpage.allow_tags = True
 
     def has_change_permission(self, request, obj=None):
