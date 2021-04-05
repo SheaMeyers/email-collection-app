@@ -3,14 +3,7 @@ html {
 }
 
 h1, h2, h3 {
-    color: #ffffff;
     text-align: center;
-    width: 100%;
-}
-
-.steps {
-    margin: 0 auto;
-    max-width: 720px;
     width: 100%;
 }
 
@@ -35,4 +28,29 @@ a {
 .button--div {
     text-align: end;
     padding: 1rem 4rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  box-shadow: 0 16px 48px grey;
+  max-width: 66.666667%;
 }

@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ object.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/email_collect.css' %}">
 </head>
 <body>
-    <h1>{{ object.title }}</h1>
-    <h2>{{ object.sub_title }}</h2>
-    <div class="text">
-        <p>{{ object.text_above_email|linebreaksbr }}</p>
-        <p>{{ object.text_below_email|linebreaksbr }}</p>
+    <div class="container">
+        <div class="card">
+            <h1>{{ object.title }}</h1>
+            <h2>{{ object.sub_title }}</h2>
+            <div class="text">
+                <p>{{ object.text_above_email|linebreaksbr }}</p>
+                <p>{{ object.text_below_email|linebreaksbr }}</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
