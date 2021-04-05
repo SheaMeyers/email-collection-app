@@ -21,7 +21,7 @@ class PageAdminForm(forms.ModelForm):
 
     def clean_url_pathname(self):
         if self.cleaned_data['url_pathname'] and \
-            Page.objects.filter(url_pathname=self.cleaned_data['url_pathname']).exists():
+                Page.objects.filter(url_pathname=self.cleaned_data['url_pathname']).exists():
             raise ValidationError(f"Another page already has the url path name {self.cleaned_data['url_pathname']}")
 
         return self.cleaned_data['url_pathname']
