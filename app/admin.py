@@ -46,3 +46,9 @@ class EmailEntryAdmin(admin.ModelAdmin):
         if not request.user.is_superuser:
             queryset = queryset.filter(page__user=request.user)
         return queryset
+
+    def get_form(self, request, obj=None, **kwargs):
+        if not request.user.is_superuser:
+            self.readonly_fields = ('email', 'date_added',)
+            self.exclude = ('page',)
+        return super(EmailEntryAdmin, self).get_form(request, obj, **kwargs)
