@@ -4,8 +4,8 @@ from .models import Page, User, EmailEntry
 
 
 @admin.register(Page)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('url_pathname', 'title', 'sub_title', 'background_colour',)
+class PageAdmin(admin.ModelAdmin):
+    list_display = ('id', 'url_pathname', 'title', 'sub_title', 'background_colour',)
     search_fields = ('url_pathname', 'title', 'sub_title', 'background_colour',)
 
 
