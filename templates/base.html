@@ -3,10 +3,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Email Collection App</title>
+    <title>Email Collect</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <p>Hello World</p>
+    <div class="button--div">
+        <a href="{% url 'admin:login' %}">Sign In</a>
+        <a href="{% url 'home' %}">Sign Up</a>
+    </div>
+    <h1>Email Collect</h1>
+    <h2>Simply and easily collect emails from your customers or users</h2>
+    <h3>Only takes 3 steps and can be done in less than 5 minutes!</h3>
+    <div class="steps">
+        <h3>1. Create an account.</h3>
+        <h3>2. Set up your account.</h3>
+        <h3>
+            3. Done!
+            You now have a web page where your customers and users can leave you their email.
+            You can see the emails by signing into your account
+        </h3>
+    </div>
 </body>
 </html>

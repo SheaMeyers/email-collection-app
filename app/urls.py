@@ -22,5 +22,5 @@ urlpatterns = [
     # Admin seems to have a password-change function but no endpoint
 
     # Specific url path    path('<slug:url_path>', views.Detail.as_view(), name='_detail'),
-    path('', TemplateView.as_view(template_name="base.html")),
+    path('', TemplateView.as_view(template_name="base.html"), name="home"),
 ]
