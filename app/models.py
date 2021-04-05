@@ -17,7 +17,7 @@ class Page(models.Model):
     background_colour = models.CharField(blank=True, max_length=7)
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        if self.url_pathname and Page.objects.filter(url_pathname=self.url_pathname).exists():
+        if self.url_pathname and Page.objects.filter(url_pathname=self.url_pathname).exclude(id=self.id).exists():
             raise ValueError(f"Another page already has the url path name {self.url_pathname}")
 
         return super().save(force_insert=force_insert, force_update=force_update,
