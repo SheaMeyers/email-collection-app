@@ -13,10 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('app.urls')),
+    # TODO Do this later, get website up and running first
+    # sign up  path('sign-up', views.Detail.as_view(), name='_detail'),
+    # Admin seems to have a password-change function but no endpoint
+
+    # Specific url path    path('<slug:url_path>', views.Detail.as_view(), name='_detail'),
+    path('', TemplateView.as_view(template_name="base.html")),
 ]
