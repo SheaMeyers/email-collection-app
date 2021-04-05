@@ -8,7 +8,7 @@ class Page(models.Model):
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
     url_pathname = models.CharField(blank=True, unique=True, max_length=40)
     title = models.CharField(blank=True, max_length=40)
-    sub_title = models.CharField(blank=True, max_length=40)
+    sub_title = models.CharField(blank=True, max_length=80)
     text_above_email = models.TextField(blank=True)
     text_below_email = models.TextField(blank=True)
     background_colour = models.CharField(blank=True, max_length=6, help_text='Six character hex value')

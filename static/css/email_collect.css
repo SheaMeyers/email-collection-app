@@ -3,3 +3,7 @@
     max-width: 720px;
     width: 100%;
 }
+
+.text h3 {
+    text-align: left;
+}
