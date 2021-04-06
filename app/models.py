@@ -10,7 +10,7 @@ class Page(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
     url_pathname = models.CharField(blank=True, max_length=40)
-    title = models.CharField(blank=True, max_length=40)
+    title = models.CharField(blank=True, max_length=60)
     sub_title = models.CharField(blank=True, max_length=80)
     text_above_email = models.TextField(blank=True)
     text_below_email = models.TextField(blank=True)
