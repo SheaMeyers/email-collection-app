@@ -2,7 +2,14 @@
 <html lang="en" style="background: {{ object.background_colour }}">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="{{ object.title }}" />
+    <meta
+            name="keywords"
+            content="email emails collect collection collects {{ object.title }} {{ object.sub_title }}"
+    />
+
     <title>{{ object.title }}</title>
+
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/email_collect.css' %}">
