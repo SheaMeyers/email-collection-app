@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from import_export.admin import ExportActionMixin
 
 from .forms import PageAdminForm
 from .models import Page, User, EmailEntry
-
+from .resources import EmailEntryResource
 
 admin.site.site_url = None
 
@@ -41,10 +42,11 @@ class PageAdmin(admin.ModelAdmin):
 
 
 @admin.register(EmailEntry)
-class EmailEntryAdmin(admin.ModelAdmin):
+class EmailEntryAdmin(ExportActionMixin, admin.ModelAdmin):
     list_display = ('email', 'date_added',)
     list_filter = ('date_added',)
     search_fields = ('email',)
+    resource_class = EmailEntryResource
 
     def has_change_permission(self, request, obj=None):
         return request.user.is_active and (request.user.is_staff or request.user.is_superuser)
