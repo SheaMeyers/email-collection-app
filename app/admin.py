@@ -43,6 +43,7 @@ class PageAdmin(admin.ModelAdmin):
 @admin.register(EmailEntry)
 class EmailEntryAdmin(admin.ModelAdmin):
     list_display = ('email', 'date_added',)
+    list_filter = ('date_added',)
     search_fields = ('email',)
 
     def has_change_permission(self, request, obj=None):
