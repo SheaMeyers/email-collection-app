@@ -20,6 +20,9 @@ from django.views.generic.base import TemplateView
 
 from .sitemap import StaticViewSitemap, PagesSitemap
 
+handler404 = 'project.views.handler404'
+handler500 = 'project.views.handler500'
+
 sitemaps = {
     'static': StaticViewSitemap,
     'pages': PagesSitemap

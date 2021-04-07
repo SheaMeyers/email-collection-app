@@ -29,5 +29,3 @@ class EmailCollectView(FormMixin, DetailView):
     def form_valid(self, form):
         EmailEntry.objects.create(email=form.cleaned_data['email'], page=self.object)
         return super(EmailCollectView, self).form_valid(form)
-
-
