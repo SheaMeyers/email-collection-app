@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+{% if object.background_colour %}
+<html lang="en" style="background: {{ object.background_colour }}">
+{% else %}
+<html lang="en" >
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Email Collect" />
+    <meta
+            name="keywords"
+            content="email collect emails collection collects"
+    />
+
+    {% if object.title %}
+        <title>{{ object.title }}</title>
+    {% else %}
+        <title>Email Collect</title>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    {% block extra_css %}
+    {% endblock %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+</head>
+<body>
+    {% block top %}
+    {% endblock %}
+    <div class="container">
+        <div class="card">
+            {% block content %}
+            {% endblock %}
+<!--            <h1>Email Collect</h1>-->
+<!--            <h2>Simply and easily collect emails from your customers or users</h2>-->
+<!--            <h3>Only takes 3 steps and can be done in less than 5 minutes!</h3>-->
+<!--            <div class="steps">-->
+<!--                <h3>1. Create an account.</h3>-->
+<!--                <h3>2. Set up your account.</h3>-->
+<!--                <h3>-->
+<!--                    3. Done!-->
+<!--                    You now have a web page where your customers and users can leave you their email.-->
+<!--                    You can see the emails by signing into your account-->
+<!--                </h3>-->
+<!--            </div>-->
+        </div>
+    </div>
+</body>
+</html>

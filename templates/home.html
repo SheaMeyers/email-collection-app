@@ -1,38 +1,23 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Email Collect" />
-    <meta
-            name="keywords"
-            content="email collect emails collection collects"
-    />
+{% extends 'base.html' %}
 
-    <title>Email Collect</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
-</head>
-<body>
-    <div class="button--div">
-        <a href="{% url 'admin:login' %}">Sign In</a>
-        <a href="{% url 'home' %}">Sign Up</a>
-    </div>
-    <div class="container">
-        <div class="card">
-            <h1>Email Collect</h1>
-            <h2>Simply and easily collect emails from your customers or users</h2>
-            <h3>Only takes 3 steps and can be done in less than 5 minutes!</h3>
-            <div class="steps">
-                <h3>1. Create an account.</h3>
-                <h3>2. Set up your account.</h3>
-                <h3>
-                    3. Done!
-                    You now have a web page where your customers and users can leave you their email.
-                    You can see the emails by signing into your account
-                </h3>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+{% block top %}
+<div class="button--div">
+    <a href="{% url 'admin:login' %}">Sign In</a>
+    <a href="{% url 'home' %}">Sign Up</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>Email Collect</h1>
+<h2>Simply and easily collect emails from your customers or users</h2>
+<h3>Only takes 3 steps and can be done in less than 5 minutes!</h3>
+<div class="steps">
+    <h3>1. Create an account.</h3>
+    <h3>2. Set up your account.</h3>
+    <h3>
+        3. Done!
+        You now have a web page where your customers and users can leave you their email.
+        You can see the emails by signing into your account
+    </h3>
+</div>
+{% endblock %}
