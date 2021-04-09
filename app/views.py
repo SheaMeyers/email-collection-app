@@ -37,8 +37,7 @@ class SignUpView(FormView):
     success_url = reverse_lazy('sign-up')
 
     def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        form.send_email()
-        messages.success(self.request, 'Email successfully submitted! Please check your inbox.')
+        result = form.save(request=self.request)
+        if result:
+            messages.success(self.request, 'Email successfully submitted! Please check your inbox.')
         return super().form_valid(form)

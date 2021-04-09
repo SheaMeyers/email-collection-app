@@ -18,7 +18,7 @@
     </form>
     {% if messages %}
         {% for message in messages %}
-            <p class="success-message">{{ message }}</p>
+            <p class="message message-{{ message.tags }}">{{ message|safe }}</p>
         {% endfor %}
     {% endif %}
 </div>

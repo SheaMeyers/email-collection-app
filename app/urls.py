@@ -20,7 +20,6 @@ from . import views
 
 urlpatterns = [
     path('sign-up', views.SignUpView.as_view(), name='sign-up'),
-
     path('<slug:url_pathname>', views.EmailCollectView.as_view(), name='email-collect'),
     path('', TemplateView.as_view(template_name="home.html"), name="home"),
 ]
