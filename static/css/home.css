@@ -11,7 +11,7 @@ h1, h2, h3 {
     text-align: left;
 }
 
-a {
+.button {
     color: #fff;
     background-color: #007bff;
     display: inline-block;
