@@ -19,9 +19,7 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    # TODO Do this later, get website up and running first
-    # sign up  path('sign-up', views.Detail.as_view(), name='_detail'),
-    # Admin seems to have a password-change function but no endpoint
+    path('sign-up', views.SignUpView.as_view(), name='sign-up'),
 
     path('<slug:url_pathname>', views.EmailCollectView.as_view(), name='email-collect'),
     path('', TemplateView.as_view(template_name="home.html"), name="home"),

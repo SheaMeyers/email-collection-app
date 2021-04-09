@@ -30,3 +30,12 @@ class PageAdminForm(forms.ModelForm):
             raise ValidationError(f"Url pathname can only contain letters, numbers, dashes, and underscores")
 
         return self.cleaned_data['url_pathname']
+
+
+class SignUpForm(forms.Form):
+    email = forms.EmailField()
+
+    def send_email(self):
+        # TODO Implement me
+        # send email using the self.cleaned_data dictionary
+        pass
