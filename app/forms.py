@@ -83,6 +83,6 @@ class SignUpForm(forms.Form):
             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
             'user': user,
             'token': default_token_generator.make_token(user),
-            'protocol': 'https',
+            'protocol': 'https' if self.request.is_secure() else 'http',
         }
         return self.send_mail('sign_up_subject.txt', 'sign_up_email.html', context, settings.EMAIL_HOST_USER, email)
