@@ -13,17 +13,18 @@
 <h3>Only takes 3 steps and can be done in less than 5 minutes!</h3>
 <div class="steps">
     <h3>1. Create an account.</h3>
-    <h3>2. Set up your account.</h3>
+    <h3>2. Set up your account.
+        <a href="{% url 'guide' %}" target="_blank" rel="noopener noreferrer">
+            Click here for a detailed step-by-step guide
+        </a>
+    </h3>
     <h3>
         3. Done!
-        You now have a web page where your customers and users can leave you their email.
-        You can see the emails by signing into your account
+        You now have a web page where your customers and users can leave you their email and
+        you can see the emails by signing into your account
     </h3>
-    <br><br>
-    <a href="{% url 'guide' %}" target="_blank" rel="noopener noreferrer">
-        Click here for a detailed step-by-step guide
-    </a>
-    <p>or you can email us at</p>
+    <br>
+    <span>For questions you can always email us at</span>
     <a href="mailto:emailcollectwebsite@gmail.com">emailcollectwebsite@gmail.com</a>
 </div>
 {% endblock %}

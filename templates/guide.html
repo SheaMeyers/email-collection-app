@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="{% static 'css/guide.css' %}">
 {% endblock %}
 
+{% block top %}
+<div class="button--div">
+    <a class="button" href="{% url 'home' %}">Go Home</a>
+</div>
+{% endblock %}
+
 {% block content %}
 <h1>Email Collect Step-by-Step Guide</h1>
 
