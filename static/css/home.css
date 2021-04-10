@@ -54,3 +54,10 @@ h1, h2, h3 {
   box-shadow: 0 16px 48px grey;
   max-width: 66.666667%;
 }
+
+@media screen and (max-width: 480px) {
+    .button--div {
+        display: flex;
+        justify-content: space-around;
+    }
+}
