@@ -25,7 +25,10 @@ SECRET_KEY = '7b8@q6eej^(3_&3g!kx+3nxr@p^ev33r3bxpo&vg*cx279*)7d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+SECURE_SSL_REDIRECT = not DEBUG
+
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1',
+                 'email-collect-app.herokuapp.com', 'email-collect.com']
 
 
 # Application definition
