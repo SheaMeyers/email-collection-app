@@ -35,6 +35,9 @@ class PageAdminForm(forms.ModelForm):
                 Page.objects.filter(url_pathname=self.cleaned_data['url_pathname']).exists():
             raise ValidationError(f"Another page already has the url path name {self.cleaned_data['url_pathname']}")
 
+        if self.cleaned_data['url_pathname'] in ['sign-up', 'guide', 'admin', 'auth', 'sitemap.xml', 'robots.txt']:
+            raise ValidationError(f"Another page already has the url path name {self.cleaned_data['url_pathname']}")
+
         if self.cleaned_data['url_pathname'] and not re.match('^[A-Za-z0-9_-]*$', self.cleaned_data['url_pathname']):
             raise ValidationError(f"Url pathname can only contain letters, numbers, dashes, and underscores")
 
@@ -68,7 +71,8 @@ class SignUpForm(forms.Form):
         domain = current_site.domain
 
         if User.objects.filter(email=email).exists():
-            reset_password_url = f'<a href=https://{domain}{reverse_lazy("password_reset")}>Click Here</a>'
+            protocol = 'https' if request.is_secure() else 'http',
+            reset_password_url = f'<a href={protocol}://{domain}{reverse_lazy("password_reset")}>Click Here</a>'
             messages.error(request, f'Email already exists in our system.  '
                                     f'Please {reset_password_url} if you need to reset your password.')
             return
