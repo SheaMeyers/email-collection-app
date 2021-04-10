@@ -24,8 +24,8 @@ class PageAdmin(admin.ModelAdmin):
 
     def webpage(self, obj):
         if obj.url_pathname:
-            return format_html(f'<a href="http://localhost:8000/{obj.url_pathname}" '
-                               f'target="_blank" rel="noopener noreferrer">Your Web Page</a>')
+            url = f"https://email-collect.com/{obj.url_pathname}"
+            return format_html(f'<a href="{url}" target="_blank" rel="noopener noreferrer">{url}</a>')
     webpage.allow_tags = True
 
     def has_change_permission(self, request, obj=None):
