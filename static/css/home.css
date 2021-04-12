@@ -11,7 +11,7 @@ h1, h2, h3 {
     text-align: left;
 }
 
-a {
+.button {
     color: #fff;
     background-color: #007bff;
     display: inline-block;
@@ -53,4 +53,11 @@ a {
   padding: 1.25rem;
   box-shadow: 0 16px 48px grey;
   max-width: 66.666667%;
+}
+
+@media screen and (max-width: 480px) {
+    .button--div {
+        display: flex;
+        justify-content: space-around;
+    }
 }

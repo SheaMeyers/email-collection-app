@@ -25,7 +25,10 @@ SECRET_KEY = '7b8@q6eej^(3_&3g!kx+3nxr@p^ev33r3bxpo&vg*cx279*)7d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+SECURE_SSL_REDIRECT = not DEBUG
+
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1',
+                 'email-collect-app.herokuapp.com', 'email-collect.com']
 
 
 # Application definition
@@ -132,4 +135,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+LOGIN_URL = '/admin/login/'
+
 GEOIP_PATH = os.path.join(BASE_DIR, 'GeoLite2-Country.mmdb')
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "emailcollectwebsite@gmail.com"
+EMAIL_HOST_PASSWORD = "rziuscxsohghrsus"

@@ -1,0 +1,3 @@
+{% load i18n %}{% autoescape off %}
+{% blocktranslate %}Create password for {{ site_name }}{% endblocktranslate %}
+{% endautoescape %}

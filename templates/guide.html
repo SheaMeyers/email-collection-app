@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/guide.css' %}">
+{% endblock %}
+
+{% block top %}
+<div class="button--div">
+    <a class="button" href="{% url 'home' %}">Go Home</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>Email Collect Step-by-Step Guide</h1>
+
+<h3>
+    1. After logging in you'll see page like the image below.
+        The first thing you'll want to do is click on the pages link.
+</h3>
+<img src="{% static 'images/guide/Step1.jpg' %}" alt="Email Collect Step 1">
+<h3>2. Click on your unique id.</h3>
+<img src="{% static 'images/guide/Step2.jpg' %}" alt="Email Collect Step 2">
+<h3>3. Fill in your page details. You can change these at anytime.</h3>
+<img src="{% static 'images/guide/Step3.jpg' %}" alt="Email Collect Step 3">
+<h3>4. Click the 'Save' button on the bottom right of the page.</h3>
+<img src="{% static 'images/guide/Step4.jpg' %}" alt="Email Collect Step 4">
+<h3>5. You will be redirected to the page from Step 2 but now your details will be filled in.</h3>
+<img src="{% static 'images/guide/Step5.jpg' %}" alt="Email Collect Step 5">
+<h3>
+    6. Click on your unique id again like you did in Step 2 and scroll to the bottom of the page.
+        There you will find your newly created web page!  You can click the link to see your web page
+        and anyone can now come to your web page to give you their email!
+</h3>
+<img src="{% static 'images/guide/Step6.jpg' %}" alt="Email Collect Step 6">
+<h3>
+    7. Now we will show you how to see the emails people send you.
+        On the left hand side of your screen you will see 'Email entrys'. Click this.
+</h3>
+<img src="{% static 'images/guide/Step7.jpg' %}" alt="Email Collect Step 7">
+<h3>
+    8. On this screen you will see the emails people have sent and when they sent them.
+</h3>
+<img src="{% static 'images/guide/Step8.jpg' %}" alt="Email Collect Step 8">
+<h3>
+    9. Optionally you can download these emails in a variety of files to give you better access to this data.
+</h3>
+<img src="{% static 'images/guide/Step9.jpg' %}" alt="Email Collect Step 9">
+{% endblock %}

@@ -20,7 +20,7 @@
     </form>
     {% if messages %}
         {% for message in messages %}
-            <p class="success-message">{{ message }}</p>
+            <p class="message message-{{ message.tags }}">{{ message }}</p>
         {% endfor %}
     {% endif %}
     <h3>{{ object.text_below_email|linebreaksbr }}</h3>
