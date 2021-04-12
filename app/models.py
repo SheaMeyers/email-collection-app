@@ -42,9 +42,3 @@ class EmailEntry(models.Model):
     date_added = models.DateTimeField(_('date added'), default=timezone.now)
     email = models.EmailField()
     page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name='email_entries')
-
-
-class PasswordCreateRequest(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date_created = models.DateTimeField(default=timezone.now)
-    email = models.EmailField()
