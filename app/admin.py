@@ -20,7 +20,7 @@ class PageAdmin(admin.ModelAdmin):
     form = PageAdminForm
     list_display = ('id', 'url_pathname', 'title', 'sub_title', 'background_colour',)
     search_fields = ('url_pathname', 'title', 'sub_title', 'background_colour',)
-    readonly_fields = ('date_created', 'webpage',)
+    readonly_fields = ('date_created', 'date_modified', 'webpage',)
 
     def webpage(self, obj):
         if obj.url_pathname:
