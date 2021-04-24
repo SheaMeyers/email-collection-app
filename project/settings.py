@@ -79,15 +79,21 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+DATABASE_HOSTNAME = os.environ.get('PGHOST', 'localhost')
+DATABASE_PORT = os.environ.get('PGPORT', 5432)
+DATABASE_NAME = os.environ.get('PGDATABASE', 'email_collection_app')
+DATABASE_USER = os.environ.get('PGUSER', 'email_collection_app')
+DATABASE_PASSWORD = os.environ.get('PGPASSWORD', 'email_collection_app')
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'email_collection_app',
-        'USER': 'email_collection_app',
-        'PASSWORD': 'email_collection_app',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': DATABASE_HOSTNAME,
+        'PORT': DATABASE_PORT,
     }
 }
 
