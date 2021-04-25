@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'import_export',
     'app'
 ]
 
@@ -108,9 +109,6 @@ LOGGING = {
         }
     }
 }
-
-# TODO Remvoe this
-DEBUG_PROPAGATE_EXCEPTIONS=True
 
 
 WSGI_APPLICATION = 'project.wsgi.application'
@@ -179,8 +177,6 @@ STATIC_URL = '/static/'
 # Location of static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 LOGIN_URL = '/admin/login/'
 
