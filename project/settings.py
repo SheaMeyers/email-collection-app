@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7b8@q6eej^(3_&3g!kx+3nxr@p^ev33r3bxpo&vg*cx279*)7d'
+SECRET_KEY = 'Add-Secret-Key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 SECURE_SSL_REDIRECT = not DEBUG
 
@@ -186,7 +186,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "emailcollectwebsite@gmail.com"
-EMAIL_HOST_PASSWORD = "rziuscxsohghrsus"
+EMAIL_HOST_USER = "email@email.com"
+EMAIL_HOST_PASSWORD = "password"
 
 django_heroku.settings(locals())
