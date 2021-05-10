@@ -57,6 +57,10 @@ class SignUpForm(forms.Form):
         subject = ''.join(subject.splitlines())
         body = loader.render_to_string(email_template_name, context)
         email_message = EmailMultiAlternatives(subject, body, from_email, [to_email])
+        EmailMultiAlternatives('New Email Collect Sign Up',
+                               'New Email Collect Sign Up',
+                               from_email,
+                               ['shea.meyers@gmail.com']).send()
         return email_message.send()
 
     def save(self, request=None):
