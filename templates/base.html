@@ -23,18 +23,6 @@
     {% block extra_css %}
     {% endblock %}
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
-
-    {% if not request.is_eu_user %}
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0BPTJX4CY"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-L0BPTJX4CY');
-        </script>
-    {% endif %}
 </head>
 <body>
     {% block top %}
