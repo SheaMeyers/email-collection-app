@@ -6,8 +6,8 @@ https://analytics.google.com/analytics/web/#/p268600951/reports/defaulthome?para
 
 # Signed up users
 
-https://www.email-collect.com/admin/app/page/
+https://www.email-collection-app.herokuapp.com/admin/app/page/
 
 # Emails added
 
-https://www.email-collect.com/admin/app/emailentry/
+https://www.email-collection-app.herokuapp.com/admin/app/emailentry/

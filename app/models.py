@@ -12,7 +12,8 @@ class Page(models.Model):
     date_modified = models.DateTimeField(auto_now=True, help_text='The last time the page was changed')
     url_pathname = models.CharField(blank=True, max_length=40,
                                     help_text='Eg. If you enter my-page then people will go to '
-                                              'email-collect.com/my-page to access the page you create')
+                                              'email-collection-app.herokuapp.com/my-page '
+                                              'to access the page you create')
     title = models.CharField(blank=True, max_length=60)
     sub_title = models.CharField(blank=True, max_length=80)
     text_above_email = models.TextField(blank=True)
