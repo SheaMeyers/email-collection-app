@@ -1,5 +1,6 @@
 from django.contrib import admin
-from django.utils.html import format_html
+from django.utils.html import format_html, escape
+
 from import_export.admin import ExportActionMixin
 
 from .forms import PageAdminForm
@@ -24,7 +25,7 @@ class PageAdmin(admin.ModelAdmin):
 
     def webpage(self, obj):
         if obj.url_pathname:
-            url = f"https://email-collection-app.herokuapp.com/{obj.url_pathname}"
+            url = f"https://email-collection-app.herokuapp.com/{escape(obj.url_pathname)}"
             return format_html(f'<a href="{url}" target="_blank" rel="noopener noreferrer">{url}</a>')
     webpage.allow_tags = True
 
