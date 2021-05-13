@@ -13,6 +13,8 @@ Example Created Page: https://email-collection-app.herokuapp.com/my-page
 
 ## Quickstart instructions
 
+Note: This project relies on postgresql running on your system
+
 1. Create a virtual environment (optional but recommended) https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
 
 2. Install python requirements
