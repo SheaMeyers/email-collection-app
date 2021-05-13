@@ -5,6 +5,11 @@ that allows them to collect emails from users or customers.
 It also displays them in user friendly admin screen and 
 allows them to be exported for easy usage.
 
+## Live Demo
+
+Base Url: https://email-collection-app.herokuapp.com/
+Example Created Page: https://email-collection-app.herokuapp.com/my-page
+
 ## Quickstart instructions
 
 1. Create a virtual environment (optional but recommended) https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
