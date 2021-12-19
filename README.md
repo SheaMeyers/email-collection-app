@@ -49,5 +49,5 @@ The home page will give further instructions for setting up an account
 ## Deploying to Heroku
 
 This project also contains the configuration to be deploy to Heroku (https://devcenter.heroku.com/articles/django-app-configuration). 
-If you created a project in Heroku you should only need to set the git upstream run git push heroku master in order for this project to be run on Heroku. 
+If you created a project in Heroku you should only need to set the `git upstream` and run `git push heroku master` in order for this project to be run on Heroku. 
 For further instructions please reference Heroku documentation.
